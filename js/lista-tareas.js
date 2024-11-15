@@ -3,14 +3,12 @@ const tarea = document.getElementById('taskInput');
 const li = document.createElement('li');
 const ul = document.getElementById('taskList');
 
-let string = '';
 
 let tareaNueva = '';
 
 tarea.addEventListener('input', (e) =>
     {
         e.preventDefault();
-        console.log(e.target.value);
         tareaNueva = e.target.value;
     })
 
@@ -26,11 +24,7 @@ btnagg.addEventListener('click', () =>{
     }else{
 
         li.textContent = tareaNueva;
-        string += li.textContent;
         
-        console.log(string);
-    
-        // ul.textContent = string
-        ul.appendChild(li)
+        ul.insertBefore(li, ul.children[0])
     }
 })
